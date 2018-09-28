@@ -1,0 +1,79 @@
+<html>
+    <head> 
+       <title>HTML5 Calculator</title>
+           <link rel="stylesheet" type="text/css" href="CalcStyle.css" />
+           <script type="text/javascript">
+                var strInput=""
+                var count = 0
+                function DoIt(value)
+	{
+                if (value != "=")
+                    {
+                      strInput += value
+                      document.Calculator.Display.value=strInput
+                     }
+                else
+                    {
+                    strEval = eval(strInput)
+                    strInput += "=" +  eval(document.Calculator.Display.value)
+                    document.Calculator.Display.value=strInput
+					strInput=strEval
+                    }
+	}
+           </script>
+     </head>
+     <body>
+           <h2>ChinweJoy Simple HTML5 Calculator</h2>
+	<center>
+     <form name="Calculator">
+           <table border="5"
+            <tr>
+                 <td>
+           <table border="5" class="cal">
+            <tr>
+  	 <td><textarea class="display" type="text" id="Display" value="0">
+	    </textarea></td>
+	 <td><input type="button" value="Clear" onClick="Display.value=' ' ; strInput=' ' " />
+	    </tr>
+            <tr>
+                  <td colspan="2"><input type="text" size="40" id="Memory" class="Mem">Mem</td>
+            </table>
+	<center>
+            <table border="5">
+            <tr>
+ 	   <td><input class="b4" type="button" value="(" onClick="DoIt( '(' )" /></td>
+ 	   <td><input class="b1" type="button" value="1" onClick="DoIt( '1' )" /></td>
+ 	   <td><input class="b1" type="button" value="2" onClick="DoIt( '2' )" /></td> 	   	   
+	   <td><input class="b1" type="button" value="3" onClick="DoIt( '3' )" /></td>
+ 	   <td rowspan="2"><input class="b2" type="button" value="+" onClick="DoIt( '+' )" /></td>
+ 	   <td><input class="b4" type="button" value="-" onClick="DoIt( '-' )" /></td>
+	  </tr>
+	  <tr>
+ 	   <td><input class="b4" type="button" value=")" onClick="DoIt( ')' )" /></td>
+ 	   <td><input class="b1" type="button" value="4" onClick="DoIt( '4' )" /></td>
+ 	   <td><input class="b1" type="button" value="5" onClick="DoIt( '5' )" /></td>
+ 	   <td><input class="b1" type="button" value="6" onClick="DoIt( '6' )" /></td>
+ 	   <td><input class="b4" type="button" value="/" onClick="DoIt( '/' )" /></td>
+	   </tr>
+	   <tr>
+ 	   <td><input class="b4" type="button" value="M+" onClick="DoIt( '^' )" /></td>
+ 	   <td><input class="b1" type="button" value="7" onClick="DoIt( '7' )" /></td>
+ 	   <td><input class="b1" type="button" value="8" onClick="DoIt( '8' )" /></td>
+ 	   <td><input class="b1" type="button" value="9" onClick="DoIt( '9' )" /></td>
+ 	   <td rowspan="2"><input class="b2" type="button" value="=" onClick="DoIt( '=' )" /></td>
+	   <td><input class="b4" type="button" value="X" onClick="DoIt( '*' )" /></td>
+	    </tr>
+ 	   <td><input class="b4" type="button" value="Mrc" onClick="DoIt( '1' )" /></td>
+ 	   <td colspan="3" align="center"><input class="zero" type="button" value="0" onClick="DoIt( '0' )" /></td>
+ 	   <td><input class="b3" type="button" value="." onClick="DoIt( '.' )" /></td>
+	   </table>
+	</center>
+	    </td>
+	    </tr>
+	</tr>
+	</table>
+
+
+	</form>
+	</center>
+</html>
